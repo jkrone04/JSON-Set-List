@@ -1,0 +1,64 @@
+{
+	"setlist" : [
+	{
+		"title": "Billie Jean",
+		"artist": "Michael Jackson",
+		"genre": "Pop",
+		"year": "1988"
+	},
+	{
+		"title": "Dreams",
+		"artist": "Fleetwood Mac",
+		"genre": "Soft Rock",
+		"year": "1977"
+	},
+	{
+		"title": "Shut Up and Dance",
+		"artist": "Walk the Moon",
+		"genre": "Pop",
+		"year": "2014"
+	},
+	{
+		"title": "Take on Me",
+		"artist": "Aha",
+		"genre": "Pop",
+		"year": "1985"
+	},
+	{
+		"title": "Gravity",
+		"artist": "John Mayer",
+		"genre": "Pop",
+		"year": "2005"
+	},
+	{
+		"title": "Come on Eileen",
+		"artist": "Dexys Midnight Runners",
+		"genre": "New Wave",
+		"year": "1993"
+	},
+	{
+		"title": "Cake by the Ocean",
+		"artist": "DNCE",
+		"genre": "Pop",
+		"year": "2015"
+	},
+	{
+		"title": "American Girl",
+		"artist": "Tom Petty",
+		"genre": "Rock",
+		"year": "1976"
+	},
+	{
+		"title": "Crazy Little Thing Called Love",
+		"artist": "Queen",
+		"genre": "Rockabilly",
+		"year": "1979"
+	},
+	{
+		"title": "Don't Stop Believin'",
+		"artist": "Journey",
+		"genre": "Rock",
+		"year": "1981"
+	}
+	]
+}

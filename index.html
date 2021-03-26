@@ -2,28 +2,61 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>JSON Pet Object</title>
+<title>JSON Track Object</title>
 	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-	<!--script language="javascript" src="setlist.json"></script-->
-	
 
+	<style type = text/css>
+		h2 {color:blue; font-size:25px; text-align:center}
+		h3 {color:red; font-size:17px; text-align:center}
+		.track {border: 3px black solid; border-radius: 20px; padding: 0 20px; margin: 30px;}
+		.select {font-size:20px; text-align:center}
+		#header{color:red; font-size:50px; background-color:lightblue; display:block; text-align:center}
+	</style>
 </head>
 
 <body>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script language="javascript">
-	$.get( "coverband.json", 
-		  function( data ) {
-			str = JSON.stringify(data);
-			document.write(str +"<br/>");
-	// 	strHTML= "<ul>";
-	// 	data.forEach(function(animal) { 
-	// 	strHTML += "<li>" 
-	// 		    + animal.name + " : " 
-	// 			+ animal.type + "</li>";
-	// 		}) 
-	// strHTML += "</ul>";
-	// document.write (strHTML);  /**/
+	$(document).ready(function() {
+		$("#filter").click(function() {
+			genre = document.getElementById("genres").value;
+			$.get( "https://jkrone04.github.io/JSON-Set-List/setlist.json", 
+			  function( data ) {
+				str = JSON.stringify(data);
+				strHTML= "";
+				data.forEach(function(track) { 
+					if(track.genre == genre) {
+						strHTML += "<div class='track'><h2>" 
+							    + track.title + "</h2> <h3>Artist: " 
+							    + track.artist + "</h3> <h3>Genre: " 
+							    + track.genre + "</h3> <h3>Released " 
+								+ track.year + "</h3></div>";
+					}
+				}) 
+				document.getElementById('setlist').innerHTML = strHTML;
+				})
+		})
 	})
-</script>
+	
+	</script>
+
+	<div id="header">Welcome to Radio Roulette Cover Band!</div>
+	<br>
+
+	<label class="select" for="genres">Choose a genre:</label>
+	<select class="select" id="genres" name="genres">
+	  <option value="Pop">Pop</option>
+	  <option value="Rock">Rock</option>
+	  <option value="Soft Rock">Soft Rock</option>
+	  <option value="New Wave">New Wave</option>
+	</select>
+	<br><br>
+	<button class="select" type="button" id="filter">Filter</button>
+
+	<p id="setlist"></p>
+
+
+
 </body>
 </html>

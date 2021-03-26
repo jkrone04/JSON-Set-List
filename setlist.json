@@ -20,7 +20,7 @@
 	{
 		"title": "Take on Me",
 		"artist": "Aha",
-		"genre": "Pop",
+		"genre": "New Wave",
 		"year": "1985"
 	},
 	{
@@ -40,6 +40,12 @@
 		"artist": "DNCE",
 		"genre": "Pop",
 		"year": "2015"
+	},
+	{
+		"title": "Wonderful Tonight",
+		"artist": "Eric Clapton",
+		"genre": "Soft Rock",
+		"year": "1977"
 	},
 	{
 		"title": "American Girl",

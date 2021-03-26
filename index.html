@@ -1,3 +1,5 @@
+<!-- json_setlist.html -->
+
 <!doctype html>
 <html>
 <head>
@@ -19,6 +21,8 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script language="javascript">
 	$(document).ready(function() {
+
+		//Part 4: Filter the data
 		$("#filter").click(function() {
 			genre = document.getElementById("genres").value;
 			$.get( "https://jkrone04.github.io/JSON-Set-List/setlist.json", 
@@ -34,8 +38,32 @@
 								+ track.year + "</h3></div>";
 					}
 				}) 
-				document.getElementById('setlist').innerHTML = strHTML;
-				})
+				document.getElementById('Part 4').innerHTML = strHTML;
+			})
+		})
+
+
+		//Part 3: User friendly display
+		$.get( "https://jkrone04.github.io/JSON-Set-List/setlist.json", 
+		function( data ) {
+			str = JSON.stringify(data);
+			strHTML= "";
+			data.forEach(function(track) { 
+				strHTML += "<div class='track'><h2>" 
+					    + track.title + "</h2> <h3>Artist: " 
+					    + track.artist + "</h3> <h3>Genre: " 
+					    + track.genre + "</h3> <h3>Released " 
+						+ track.year + "</h3></div>";
+			}) 
+			document.getElementById('Part 3').innerHTML = strHTML;
+		})
+
+
+		//Part 2: Serialize and display
+		$.get( "https://jkrone04.github.io/JSON-Set-List/setlist.json", 
+		function( data ) {
+			str = JSON.stringify(data);
+			document.getElementById('Part 2').innerHTML = str;
 		})
 	})
 	
@@ -44,6 +72,7 @@
 	<div id="header">Welcome to Radio Roulette Cover Band!</div>
 	<br>
 
+	<h1>Part 4: Filter the data</h1>
 	<label class="select" for="genres">Choose a genre:</label>
 	<select class="select" id="genres" name="genres">
 	  <option value="Pop">Pop</option>
@@ -54,9 +83,15 @@
 	<br><br>
 	<button class="select" type="button" id="filter">Filter</button>
 
-	<p id="setlist"></p>
+	<p id="Part 4"></p>
+	<br><br><br>
 
+	<h1>Part 3: User friendly display</h1>
+	<p id="Part 3"></p>
+	<br><br><br>
 
+	<h1>Part 2: Serialize and display</h1>
+	<p id="Part 2"></p>
 
 </body>
 </html>

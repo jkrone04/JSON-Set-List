@@ -1,5 +1,4 @@
-{
-	"setlist" : [
+[
 	{
 		"title": "Billie Jean",
 		"artist": "Michael Jackson",
@@ -60,5 +59,4 @@
 		"genre": "Rock",
 		"year": "1981"
 	}
-	]
-}
+]
